@@ -16,6 +16,20 @@ li BExpo(li a,li b){
     return op;
 }
 
+li BEnoREC(li a,li b){
+    li ans = 1;
+    while(b > 0){
+        if(b&1){
+            ans *= a;
+            ans %= MOD;
+        }
+        a *= a;
+        a %= MOD;
+        b >>= 1;
+    }
+    return ans;
+}
+
 signed main(){
     li t = 1;
     // cin >> t;
@@ -24,6 +38,7 @@ signed main(){
         li a,b;
         cin >> a >> b;
         cout << BExpo(a,b) << endl;
+        cout << BEnoREC(a,b) << endl;
     }
     return 0;
 }
